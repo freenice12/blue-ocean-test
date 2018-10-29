@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('init') {
-      steps {
-        sh 'pwd'
+      parallel {
+        stage('init') {
+          steps {
+            sh 'pwd'
+          }
+        }
+        stage('init2') {
+          steps {
+            sh 'ls -alt'
+          }
+        }
       }
     }
   }
