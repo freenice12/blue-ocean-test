@@ -5,12 +5,14 @@ pipeline {
       parallel {
         stage('init') {
           steps {
-            sh 'pwd'
+            sh '''pwd
+ls -alt'''
           }
         }
         stage('init2') {
           steps {
-            sh 'ls -alt'
+            sh '''pwd
+ls -alt'''
           }
         }
       }
